@@ -40,9 +40,11 @@ public class TestUtil extends TestBase {
 	}
 
 	public static Object[][] getTestData(String sheetName) {
-		FileInputStream file = null;
+		BufferedInputStream file = null;
+		// FileInputStream file = null;
 		try {
-			file = new FileInputStream(TESTDATA_SHEET_PATH);
+			file = new BufferedInputStream(new FileInputStream(TESTDATA_SHEET_PATH));
+			// file = new FileInputStream(TESTDATA_SHEET_PATH);
 		} catch (FileNotFoundException e) {
 			e.printStackTrace();
 		}
